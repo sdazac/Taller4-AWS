@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h3>Recomendación para: "{{ query }}"</h3>
+
+  {% if movie %}
+    <div class="card mt-3" style="width: 18rem;">
+      <img src="{{ movie.image.url }}" class="card-img-top" alt="{{ movie.title }}">
+      <div class="card-body">
+        <h5 class="card-title">{{ movie.title }}</h5>
+        <p class="card-text">Similitud: {{ similarity|floatformat:2 }}</p>
+        <p class="card-text">{{ movie.description }}</p>
+      </div>
+    </div>
+  {% else %}
+    <p>No se encontró ninguna recomendación.</p>
+  {% endif %}
+{% endblock %}
