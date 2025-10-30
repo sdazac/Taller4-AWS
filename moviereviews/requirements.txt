@@ -1,0 +1,4 @@
+djando
+Pillow
+pandas
+matplotlib
